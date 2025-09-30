@@ -1,0 +1,36 @@
+package com.ecommerce.order.controllers;
+
+import com.ecommerce.order.dto.CartItemRequest;
+import com.ecommerce.order.models.CartItem;
+import com.ecommerce.order.services.CartServices;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/cart")
+@RequiredArgsConstructor
+public class CartController {
+    private final CartServices cartServices;
+    @PostMapping
+    public ResponseEntity<String> addToCart(@RequestHeader("X-User-ID") String userId , @RequestBody CartItemRequest request){
+        if(!cartServices.addToCart(userId, request)){
+            return ResponseEntity.badRequest().body("Product out of stock or user not found or product not found");
+        }
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+    @DeleteMapping("/items/{productId}")
+    public ResponseEntity<Void> removeFromCart(@RequestHeader("X-User-ID") String userId,@PathVariable String productId){
+
+        boolean deleted = cartServices.deleteItemFromCart(userId, productId);
+        return deleted ?  ResponseEntity.noContent().build() : ResponseEntity.notFound().build();
+    }
+
+    @GetMapping
+    public ResponseEntity<List<CartItem>> getCart(@RequestHeader("X-User-ID") String userId){
+        return ResponseEntity.ok(cartServices.getCart(userId));
+    }
+}
