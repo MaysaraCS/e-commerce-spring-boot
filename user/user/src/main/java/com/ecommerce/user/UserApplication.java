@@ -11,3 +11,4 @@ public class UserApplication {
 	}
 
 }
+// docker compose up -d
