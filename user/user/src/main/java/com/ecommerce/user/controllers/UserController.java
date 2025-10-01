@@ -21,7 +21,7 @@ public class UserController {
         return new ResponseEntity<>(userService.fetAllUsers(), HttpStatus.OK);
     }
     @GetMapping("/{id}")
-    public ResponseEntity <UserResponse> getUser(@PathVariable Long id){
+    public ResponseEntity <UserResponse> getUser(@PathVariable String id){
         return userService.fetchUser(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
@@ -33,7 +33,7 @@ public class UserController {
         return ResponseEntity.ok("User created");
     }
     @PutMapping("/{id}")
-    public ResponseEntity <String> updatedUser(@PathVariable Long id ,@RequestBody UserRequest updatedUserRequest){
+    public ResponseEntity <String> updatedUser(@PathVariable String id ,@RequestBody UserRequest updatedUserRequest){
         boolean updated = userService.updateUser(id, updatedUserRequest);
         if(updated){
             return ResponseEntity.ok("User Updated");
