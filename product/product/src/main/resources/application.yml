@@ -2,25 +2,18 @@ spring:
   application:
     name: product-service
   datasource:
-#    url: jdbc:postgresql://localhost:5432/product
-    url: jdbc:postgresql://ep-withered-truth-addtvg26-pooler.c-2.us-east-1.aws.neon.tech/product?sslmode=require&channel_binding=require
-    username: neondb_owner
-    password: npg_YCdN9xpPi7ob
+    url: jdbc:postgresql://localhost:5432/product
+    #    url: jdbc:mysql://localhost:3307/maysara
+    username: maysara
+    password: maysara
   jpa:
-    database: POSTGRESQL
     show-sql: true
     hibernate:
       ddl-auto: update
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-#  h2:
-#    console:
-#      enabled: true
-#  datasource:
-#    url: jdbc:h2:mem:test
-#  jpa:
-#    show-sql: true
-#    hibernate:
-#      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
 
 server:
   port: 8081
