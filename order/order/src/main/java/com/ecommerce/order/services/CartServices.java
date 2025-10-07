@@ -1,6 +1,10 @@
 package com.ecommerce.order.services;
 
+import com.ecommerce.order.clients.ProductServiceClient;
+import com.ecommerce.order.clients.UserServiceClient;
 import com.ecommerce.order.dto.CartItemRequest;
+import com.ecommerce.order.dto.ProductResponse;
+import com.ecommerce.order.dto.UserResponse;
 import com.ecommerce.order.models.CartItem;
 import com.ecommerce.order.repository.CartItemRepository;
 import jakarta.transaction.Transactional;
@@ -16,24 +20,19 @@ import java.util.List;
 public class CartServices {
 
     private final CartItemRepository cartItemRepository;
+    private final ProductServiceClient productServiceClient;
+    private final UserServiceClient userServiceClient;
 
     public boolean addToCart(String userId, CartItemRequest request) {
         // check if product exist
-//        Optional<Product> productOpt = productRepository.findById(request.getProductId());
-//        if(productOpt.isEmpty())
-//            return false;
-//
-//        // if stock exsist
-//        Product product = productOpt.get();
-//        if (product.getStockQuantity() < request.getQuantity())
-//            return false;
-//
-//        // check if user exist by this id
-//        Optional <User> userOpt = userRepository.findById(Long.valueOf(userId));
-//        if(userOpt.isEmpty())
-//            return false;
+        ProductResponse productResponse = productServiceClient.getProductDetails(request.getProductId());
+        if(productResponse ==  null || productResponse.getStockQuantity() < request.getQuantity() )
+            return false;
 
-        //User user = userOpt.get();
+        UserResponse userResponse =  userServiceClient.getUserDetails(userId);
+        if (userResponse == null)
+            return false;
+
 
         CartItem existingCartItem = cartItemRepository.findByUserIdAndProductId(userId, request.getProductId());
         if (existingCartItem != null) {
