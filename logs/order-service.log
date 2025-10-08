@@ -1,0 +1,79 @@
+2025-10-08T12:57:45.927+03:00  INFO 23144 --- [order-service] [main] com.ecommerce.order.OrderApplication     : Starting OrderApplication using Java 25 with PID 23144 (D:\JOBS-2025\Courses before jobs\Java Spring Boot - udemy\ecom-application\Microservices\order\order\target\classes started by maysa in D:\JOBS-2025\Courses before jobs\Java Spring Boot - udemy\ecom-application\Microservices)
+2025-10-08T12:57:45.930+03:00  INFO 23144 --- [order-service] [main] com.ecommerce.order.OrderApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-10-08T12:57:45.988+03:00  INFO 23144 --- [order-service] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888/
+2025-10-08T12:57:45.989+03:00  INFO 23144 --- [order-service] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=order-service, profiles=[default], label=null, version=null, state=null
+2025-10-08T12:57:48.201+03:00  INFO 23144 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-08T12:57:48.482+03:00  INFO 23144 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 255 ms. Found 2 JPA repository interfaces.
+2025-10-08T12:57:48.833+03:00  INFO 23144 --- [order-service] [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2025-10-08T12:57:48.845+03:00  INFO 23144 --- [order-service] [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2025-10-08T12:57:49.043+03:00  INFO 23144 --- [order-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=6b93b51a-9cbe-3fae-96a4-f89b3282acad
+2025-10-08T12:57:49.855+03:00  INFO 23144 --- [order-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2025-10-08T12:57:49.874+03:00  INFO 23144 --- [order-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-08T12:57:49.875+03:00  INFO 23144 --- [order-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-08T12:57:49.984+03:00  INFO 23144 --- [order-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-08T12:57:49.985+03:00  INFO 23144 --- [order-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3993 ms
+2025-10-08T12:57:50.739+03:00  INFO 23144 --- [order-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-08T12:57:50.891+03:00  INFO 23144 --- [order-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-08T12:57:50.958+03:00  INFO 23144 --- [order-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-08T12:57:51.591+03:00  INFO 23144 --- [order-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-08T12:57:51.658+03:00  INFO 23144 --- [order-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-08T12:57:52.252+03:00  INFO 23144 --- [order-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2e6f1f48
+2025-10-08T12:57:52.254+03:00  INFO 23144 --- [order-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-08T12:57:52.831+03:00  WARN 23144 --- [order-service] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-08T12:57:53.033+03:00  INFO 23144 --- [order-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-08T12:57:55.137+03:00  INFO 23144 --- [order-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-08T12:57:56.225+03:00  INFO 23144 --- [order-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-08T12:57:57.692+03:00  WARN 23144 --- [order-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-08T12:57:59.279+03:00  WARN 23144 --- [order-service] [main] c.f.c.c.BeanFactoryAwareFunctionRegistry : Failed to locate function 'busConsumer' for function definition 'busConsumer'. Returning null.
+2025-10-08T12:57:59.374+03:00  INFO 23144 --- [order-service] [main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'order-service.springCloudBusInput' has 1 subscriber(s).
+2025-10-08T12:57:59.799+03:00  INFO 23144 --- [order-service] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-10-08T12:57:59.890+03:00  WARN 23144 --- [order-service] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-10-08T12:57:59.902+03:00  INFO 23144 --- [order-service] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 24 endpoints beneath base path '/actuator'
+2025-10-08T12:58:00.213+03:00  INFO 23144 --- [order-service] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel errorChannel
+2025-10-08T12:58:00.227+03:00  INFO 23144 --- [order-service] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel springCloudBusInput
+2025-10-08T12:58:00.235+03:00  INFO 23144 --- [order-service] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel nullChannel
+2025-10-08T12:58:00.246+03:00  INFO 23144 --- [order-service] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageHandler _org.springframework.integration.errorLogger
+2025-10-08T12:58:00.264+03:00  INFO 23144 --- [order-service] [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2025-10-08T12:58:00.264+03:00  INFO 23144 --- [order-service] [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'order-service.errorChannel' has 1 subscriber(s).
+2025-10-08T12:58:00.265+03:00  INFO 23144 --- [order-service] [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2025-10-08T12:58:00.470+03:00  INFO 23144 --- [order-service] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-10-08T12:58:00.614+03:00  INFO 23144 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-10-08T12:58:00.628+03:00  INFO 23144 --- [order-service] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-08T12:58:00.659+03:00  INFO 23144 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-10-08T12:58:00.660+03:00  INFO 23144 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-10-08T12:58:00.661+03:00  INFO 23144 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-10-08T12:58:00.661+03:00  INFO 23144 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-10-08T12:58:00.662+03:00  INFO 23144 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-10-08T12:58:00.662+03:00  INFO 23144 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-10-08T12:58:00.662+03:00  INFO 23144 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-10-08T12:58:00.990+03:00  INFO 23144 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-10-08T12:58:00.993+03:00  INFO 23144 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-10-08T12:58:00.996+03:00  INFO 23144 --- [order-service] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-10-08T12:58:00.998+03:00  INFO 23144 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1759917480998 with initial instances count: 1
+2025-10-08T12:58:01.005+03:00  INFO 23144 --- [order-service] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ORDER-SERVICE with eureka with status UP
+2025-10-08T12:58:01.006+03:00  INFO 23144 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1759917481006, current=UP, previous=STARTING]
+2025-10-08T12:58:01.013+03:00  INFO 23144 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/LAPTOP-OUUFQLKH:order-service:8083: registering service...
+2025-10-08T12:58:01.014+03:00  INFO 23144 --- [order-service] [main] o.s.c.s.binder.DefaultBinderFactory      : Creating binder: rabbit
+2025-10-08T12:58:01.015+03:00  INFO 23144 --- [order-service] [main] o.s.c.s.binder.DefaultBinderFactory      : Constructing binder child context for rabbit
+2025-10-08T12:58:01.071+03:00  INFO 23144 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/LAPTOP-OUUFQLKH:order-service:8083 - registration status: 204
+2025-10-08T12:58:01.140+03:00  INFO 23144 --- [order-service] [main] o.s.c.s.binder.DefaultBinderFactory      : Caching the binder: rabbit
+2025-10-08T12:58:01.161+03:00  INFO 23144 --- [order-service] [main] c.s.b.r.p.RabbitExchangeQueueProvisioner : declaring queue for inbound: springCloudBus.anonymous.nV3TG0SbQVOVaMK7jSkEYg, bound to: springCloudBus
+2025-10-08T12:58:01.178+03:00  INFO 23144 --- [order-service] [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2025-10-08T12:58:01.405+03:00  INFO 23144 --- [order-service] [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#1be62793:0/SimpleConnection@7bd804ed [delegate=amqp://guest@127.0.0.1:5672/, localPort=50894]
+2025-10-08T12:58:01.512+03:00  INFO 23144 --- [order-service] [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-278519397.springCloudBusInput.errors' has 1 subscriber(s).
+2025-10-08T12:58:01.515+03:00  INFO 23144 --- [order-service] [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-278519397.springCloudBusInput.errors' has 2 subscriber(s).
+2025-10-08T12:58:01.613+03:00  INFO 23144 --- [order-service] [main] o.s.i.a.i.AmqpInboundChannelAdapter      : started bean 'inbound.springCloudBus.anonymous.nV3TG0SbQVOVaMK7jSkEYg'
+2025-10-08T12:58:01.660+03:00  INFO 23144 --- [order-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path '/'
+2025-10-08T12:58:01.671+03:00  INFO 23144 --- [order-service] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8083
+2025-10-08T12:58:01.878+03:00  INFO 23144 --- [order-service] [main] figuration$IntegrationJmxConfiguration$1 : Registering MessageChannel rabbit-278519397.springCloudBusInput.errors
+2025-10-08T12:58:01.950+03:00  INFO 23144 --- [order-service] [main] com.ecommerce.order.OrderApplication     : Started OrderApplication in 17.399 seconds (process running for 18.88)
+2025-10-08T12:58:02.540+03:00  INFO 23144 --- [order-service] [RMI TCP Connection(5)-192.168.100.9] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-08T12:58:02.540+03:00  INFO 23144 --- [order-service] [RMI TCP Connection(5)-192.168.100.9] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-08T12:58:02.543+03:00  INFO 23144 --- [order-service] [RMI TCP Connection(5)-192.168.100.9] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms

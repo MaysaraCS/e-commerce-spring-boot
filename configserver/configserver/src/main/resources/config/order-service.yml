@@ -42,3 +42,15 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
     register-with-eureka: true
     fetch-registry: true
+
+logging:
+  #  level:
+  #    root: INFO
+  #    com.ecommerce.user: TRACE
+  file:
+    name: logs/order-service.log
+    #name: logs/${spring.application.name}.log
+  logback:
+    rollingpolicy:
+      max-file-size: 10MB
+      max-history: 5
