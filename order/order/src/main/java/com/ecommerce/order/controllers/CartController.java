@@ -14,23 +14,31 @@ import java.util.List;
 @RequestMapping("/api/cart")
 @RequiredArgsConstructor
 public class CartController {
-    private final CartServices cartServices;
+    private final CartServices cartService;
+
     @PostMapping
-    public ResponseEntity<String> addToCart(@RequestHeader("X-User-ID") String userId , @RequestBody CartItemRequest request){
-        if(!cartServices.addToCart(userId, request)){
-            return ResponseEntity.badRequest().body("Product out of stock or user not found or product not found");
+    public ResponseEntity<String> addToCart(
+            @RequestHeader("X-User-ID") String userId,
+            @RequestBody CartItemRequest request) {
+        if (!cartService.addToCart(userId, request)) {
+            return ResponseEntity.badRequest().body("Not able to complete the request");
         }
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
-    @DeleteMapping("/items/{productId}")
-    public ResponseEntity<Void> removeFromCart(@RequestHeader("X-User-ID") String userId,@PathVariable String productId){
 
-        boolean deleted = cartServices.deleteItemFromCart(userId, productId);
-        return deleted ?  ResponseEntity.noContent().build() : ResponseEntity.notFound().build();
+    @DeleteMapping("/items/{productId}")
+    public ResponseEntity<Void> removeFromCart(
+            @RequestHeader("X-User-ID") String userId,
+            @PathVariable String productId) {
+        boolean deleted = cartService.deleteItemFromCart(userId, productId);
+        return deleted ? ResponseEntity.noContent().build()
+                : ResponseEntity.notFound().build();
     }
 
     @GetMapping
-    public ResponseEntity<List<CartItem>> getCart(@RequestHeader("X-User-ID") String userId){
-        return ResponseEntity.ok(cartServices.getCart(userId));
+    public ResponseEntity<List<CartItem>> getCart(
+            @RequestHeader("X-User-ID") String userId) {
+        return ResponseEntity.ok(cartService.getCart(userId));
     }
+
 }

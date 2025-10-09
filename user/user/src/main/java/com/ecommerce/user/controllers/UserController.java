@@ -37,8 +37,8 @@ public class UserController {
         log.trace("Fetching user with id {}", id);
         log.debug("Fetching user with id {}", id);
         log.info("Fetching user with id {}", id);
-        log.warn("Fetching user with id {}", id);
-        log.error("Fetching user with id {}", id);
+//        log.warn("Fetching user with id {}", id);
+//        log.error("Fetching user with id {}", id);
 
         return userService.fetchUser(id)
                 .map(ResponseEntity::ok)

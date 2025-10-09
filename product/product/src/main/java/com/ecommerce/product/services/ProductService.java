@@ -62,20 +62,20 @@ public class ProductService {
     public boolean deleteProduct(Long id) {
         return productRepository.findById(id)
                 .map(product -> {
-                    productRepository.delete(product);
+                    product.setActive(false);
+                    productRepository.save(product);
                     return true;
                 }).orElse(false);
     }
 
     public List<ProductResponse> searchProducts(String keyword) {
-        return productRepository.searchProducts(keyword)
-                .stream().map(this::mapToProductResponse)
+        return productRepository.searchProducts(keyword).stream()
+                .map(this::mapToProductResponse)
                 .collect(Collectors.toList());
     }
 
     public Optional<ProductResponse> getProductById(String id) {
         return productRepository.findByIdAndActiveTrue(Long.valueOf(id))
                 .map(this::mapToProductResponse);
-
     }
 }

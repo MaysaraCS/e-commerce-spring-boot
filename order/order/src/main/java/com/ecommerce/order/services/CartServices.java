@@ -23,25 +23,26 @@ public class CartServices {
     private final ProductServiceClient productServiceClient;
     private final UserServiceClient userServiceClient;
 
+
     public boolean addToCart(String userId, CartItemRequest request) {
         // check if product exist
         ProductResponse productResponse = productServiceClient.getProductDetails(request.getProductId());
-        if(productResponse ==  null || productResponse.getStockQuantity() < request.getQuantity() )
+        if (productResponse == null || productResponse.getStockQuantity() < request.getQuantity())
             return false;
 
-        UserResponse userResponse =  userServiceClient.getUserDetails(userId);
+        UserResponse userResponse = userServiceClient.getUserDetails(userId);
         if (userResponse == null)
             return false;
 
 
         CartItem existingCartItem = cartItemRepository.findByUserIdAndProductId(userId, request.getProductId());
         if (existingCartItem != null) {
-            // update quantity
+            // Update the quantity
             existingCartItem.setQuantity(existingCartItem.getQuantity() + request.getQuantity());
             existingCartItem.setPrice(BigDecimal.valueOf(1000.00));
             cartItemRepository.save(existingCartItem);
-        }else {
-            // create new cart item
+        } else {
+            // Create new cart item
             CartItem cartItem = new CartItem();
             cartItem.setUserId(userId);
             cartItem.setProductId(request.getProductId());
@@ -53,7 +54,8 @@ public class CartServices {
     }
 
     public boolean deleteItemFromCart(String userId, String productId) {
-        CartItem cartItem =  cartItemRepository.findByUserIdAndProductId(userId, productId);
+        CartItem cartItem = cartItemRepository.findByUserIdAndProductId(userId, productId);
+
         if (cartItem != null){
             cartItemRepository.delete(cartItem);
             return true;

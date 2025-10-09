@@ -10,6 +10,7 @@ spring:
     username: guest
     password: guest
   jpa:
+    database: POSTGRESQL
     show-sql: true
     hibernate:
       ddl-auto: update
@@ -31,7 +32,7 @@ management:
       probability: 1.0
 
 app:
-  message: "Hello from config server"
+  message: "Hello product from config server"
 
 eureka:
   client:
@@ -45,8 +46,8 @@ logging:
   #    root: INFO
   #    com.ecommerce.user: TRACE
   file:
-    name: logs/product-service.log
-    #name: logs/${spring.application.name}.log
+#    name: logs/product-service.log
+    name: logs/${spring.application.name}.log
   logback:
     rollingpolicy:
       max-file-size: 10MB

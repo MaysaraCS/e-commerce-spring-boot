@@ -1,7 +1,6 @@
 package com.ecommerce.product.repository;
 
 import com.ecommerce.product.models.Product;
-import io.micrometer.observation.ObservationFilter;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
