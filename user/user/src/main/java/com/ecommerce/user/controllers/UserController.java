@@ -23,6 +23,7 @@ public class UserController {
 
     @GetMapping
     public ResponseEntity<List<UserResponse>> getAllUsers(){
+        //System.out.println("REQUEST RECEIVED");
         return new ResponseEntity<>(userService.fetAllUsers(), HttpStatus.OK);
     }
     @GetMapping("/{id}")
