@@ -4,6 +4,7 @@
     <file url="file://$PROJECT_DIR$/additional/ecom-application/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/additional/kafka/consumer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/additional/kafka/producer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/additional/keycloak/pkce-flow/pkce/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/additional/producer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/configdemo/configdemo/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/configserver/configserver/src/main/java" charset="UTF-8" />

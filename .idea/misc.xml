@@ -17,6 +17,7 @@
         <option value="$PROJECT_DIR$/additional/kafka/producer/pom.xml" />
         <option value="$PROJECT_DIR$/additional/kafka/consumer/pom.xml" />
         <option value="$PROJECT_DIR$/keycloak/auth-code-flow/auth-code-flow/pom.xml" />
+        <option value="$PROJECT_DIR$/additional/keycloak/pkce-flow/pkce/pom.xml" />
       </list>
     </option>
   </component>
